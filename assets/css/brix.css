@@ -1,3 +1,13 @@
+/* HARD RESET FOR LAYOUT ALIGNMENT */
+body {
+  margin: 0;
+  text-align: left;
+}
+
+.brix-producers,
+.brix-producers * {
+  text-align: left;
+}
 /* Brix Fine Wines Custom CSS Architecture (NO STICKY VERSION) */
 
 :root {
