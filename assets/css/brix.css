@@ -1,10 +1,14 @@
+
 /* =========================================================
-   BRIX FINE WINES — CLEAN FIXED SYSTEM
-   (layout centering + inheritance + structure fixes)
+   BRIX FINE WINES — FINAL FIXED SYSTEM
+   index (producers list) + producer pages separated cleanly
    ========================================================= */
 
+/* =========================
+   ROOT TOKENS
+   ========================= */
+
 :root {
-  /* spacing scale */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -17,7 +21,6 @@
   --space-16: 64px;
   --space-20: 80px;
 
-  /* typography */
   --fs-display: clamp(42px, 5vw, 72px);
   --fs-h2: 18px;
   --fs-h3: 14px;
@@ -25,7 +28,6 @@
   --fs-meta: 13px;
   --fs-small: 12px;
 
-  /* colours */
   --c-text: #1a1a1a;
   --c-text-muted: #666;
   --c-text-faint: #999;
@@ -36,9 +38,9 @@
   --c-bg-soft: #f7f6f4;
 }
 
-/* =========================================================
-   GLOBAL RESET (THIS FIXES YOUR CENTERING ISSUE)
-   ========================================================= */
+/* =========================
+   GLOBAL RESET (FIXES CENTERING)
+   ========================= */
 
 html, body {
   margin: 0;
@@ -52,13 +54,9 @@ html, body {
   box-sizing: border-box;
 }
 
-.brix-producers,
-.brix-producers * {
-  text-align: left;
-}
-
 /* =========================================================
-   PRODUCERS INDEX
+   INDEX PAGE (PRODUCERS GRID)
+   ONLY applies to .brix-producers
    ========================================================= */
 
 .brix-producers {
@@ -69,17 +67,15 @@ html, body {
   justify-content: center;
   margin: 0 auto;
   padding: 40px 3vw;
-  position: relative;
 }
 
 /* columns */
 .brix-col {
   display: flex;
   flex-direction: column;
-  min-width: 0;
 }
 
-/* text blocks */
+/* text */
 .brix-producers p,
 .brix-producers a {
   white-space: nowrap;
@@ -106,7 +102,6 @@ html, body {
   color: var(--c-text-quiet);
 }
 
-/* typography */
 .brix-producers strong {
   font-size: var(--fs-body);
   font-weight: 700;
@@ -120,13 +115,18 @@ html, body {
 }
 
 /* =========================================================
-   PRODUCER PAGE LAYOUT (THIS FIXES CENTERED HERO ISSUE)
+   PRODUCER PAGE (NO INDEX INHERITANCE)
    ========================================================= */
 
-.producer-page {
+.brix-producer {
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 40px;
+  text-align: left;
+}
+
+/* kill any inheritance from index system */
+.brix-producer * {
   text-align: left;
 }
 
@@ -145,10 +145,9 @@ html, body {
   display: block;
 }
 
-/* INFO PANEL */
 .info-panel h1 {
-  margin: 0 0 12px;
   font-size: var(--fs-display);
+  margin: 0 0 12px;
 }
 
 /* =========================================================
@@ -227,18 +226,13 @@ html, body {
 .brix-wine-row {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   padding: 10px 0;
   border-bottom: 1px solid var(--c-border);
-  align-items: baseline;
 }
 
 .brix-wine-name {
   font-size: var(--fs-body);
-}
-
-.brix-wine-meta {
-  font-size: var(--fs-small);
-  color: var(--c-text-faint);
 }
 
 .brix-wine-tag {
@@ -246,7 +240,7 @@ html, body {
   color: var(--c-text-quiet);
 }
 
-/* hover */
+/* hover states */
 .brix-wine-row:hover,
 .brix-meta-row:hover {
   background: var(--c-bg-soft);
@@ -268,22 +262,7 @@ html, body {
     gap: 30px;
   }
 
-  .producer-page {
+  .brix-producer {
     padding: 30px 20px;
   }
-}
-/* =========================
-   PRODUCER PAGE OVERRIDE MODE
-   ========================= */
-
-.brix-producer {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 40px;
-  text-align: left;
-}
-
-/* STOP GRID BEHAVIOUR BLEEDING INTO PAGES */
-.brix-producer .brix-col {
-  display: block;
 }
