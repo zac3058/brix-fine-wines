@@ -1,0 +1,554 @@
+/* Brix Fine Wines Custom CSS Architecture (NO STICKY VERSION) */
+
+:root {
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* typography */
+  --fs-display: clamp(42px, 5vw, 72px);
+  --fs-h2: 18px;
+  --fs-h3: 14px;
+  --fs-body: 13.5px;
+  --fs-meta: 13px;
+  --fs-small: 12px;
+
+  /* colour system (CONSOLIDATED) */
+  --c-text: #1a1a1a;
+  --c-text-muted: #666;
+  --c-text-faint: #999;
+
+  --c-border: #e0e0e0;
+  --c-bg-soft: #f7f6f4;
+}
+
+/* Global Focus States */
+.brix-producers a:focus-visible,
+.brix-copy a:focus-visible,
+a.blog-categories:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Home Feature Block (NO STICKY) */
+.brix-sticky-feature {
+  display: grid;
+  grid-template-columns: minmax(240px, 380px) minmax(360px, 1fr);
+  gap: clamp(48px, 6vw, 80px);
+  align-items: start;
+  max-width: var(--brix-page-max);
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+
+.brix-sticky-media {
+  position: static;
+}
+
+.brix-sticky-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.brix-sticky-copy {
+  min-width: 0;
+  max-width: var(--brix-content-max);
+}
+
+.brix-sticky-copy h1 {
+  margin: 0 0 32px;
+  font-size: var(--fs-display);
+  line-height: 1.08;
+}
+
+.brix-sticky-heading h2 {
+  margin: 0;
+  font-size: var(--fs-display);
+  line-height: 1.08;
+}
+
+/* Producers Index Directory Grid */
+.brix-producers {
+  display: grid;
+  
+  /* RESTORED: Changed back to max-content so columns dynamically adapt to long names */
+  grid-template-columns: repeat(4, max-content);
+  
+  /* OPTIMIZED: Tightened from 2.5rem to 1.6rem to gain horizontal real estate on smaller desktops */
+  column-gap: 1.6rem; 
+  
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 3vw !important;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative !important;
+  
+  /* RESTORED: Keeps the group optically balanced with the left margin */
+  left: -20px !important; 
+  
+  /* FIXED: Strips structural padding/margins causing bottom gaps */
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* FIXED: Neutralizes hidden Squarespace wrapper code block margins */
+.sqs-block-code, 
+.sqs-block-html, 
+.sqs-block-markdown {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.brix-col {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Force everything flat on one line and set custom tiny gaps */
+.brix-producers p,
+.brix-producers a {
+  /* RESTORED: Forbids the browser from breaking long names into multiple lines */
+  white-space: nowrap !important;
+  
+  margin: 0 0 4px 0 !important; /* Unified to 4px spacing */
+  padding: 0 !important;
+  line-height: 1.3 !important;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Country styling (e.g. FRANCE, SWITZERLAND) */
+.brix-producers h2 {
+  margin: 0 0 2px 0 !important; /* Drastically reduced to pull region headers close */
+  font-size: var(--fs-h2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brix-producers h2:not(:first-child) {
+  margin-top: 44px !important;
+}
+
+/* Region styling (e.g. BURGUNDY, LOIRE VALLEY) */
+.brix-producers h3 {
+  margin: 12px 0 6px !important; /* Controlled layout gap */
+  font-size: var(--fs-h3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-quiet);
+}
+
+/* Invisible spacer styling for top-level baseline alignment */
+.brix-producers h2.hidden-title {
+  visibility: hidden;
+  pointer-events: none;
+  margin-bottom: 2px !important;
+}
+
+.brix-producers a:hover strong,
+.brix-producers a:focus-visible strong {
+  text-decoration: underline;
+}
+
+.brix-producers strong,
+.brix-wines strong {
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+.brix-producers em,
+.brix-wines em {
+  margin-left: 4px;
+  font-size: var(--fs-small);
+  font-style: italic;
+  color: var(--c-text-subtle);
+}
+
+/* Producer Detail Content Components */
+.blog-meta-item--categories,
+.blog-item-category--Australia {
+  display: none !important;
+}
+
+a.blog-categories {
+  color: var(--c-text-muted);
+  font-size: var(--fs-meta);
+  text-decoration: none;
+}
+
+a.blog-categories:hover {
+  text-decoration: underline;
+}
+
+/* Metadata block */
+.brix-meta {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 8px;
+}
+
+.brix-meta .meta-subregion {
+  font-style: italic;
+  color: var(--c-text-muted);
+  font-size: var(--fs-h3);
+  margin: 0 0 4px;
+}
+
+.brix-meta .meta-region {
+  font-size: var(--fs-meta);
+  color: var(--c-text-quiet);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 16px;
+}
+
+.brix-meta .meta-winemaker {
+  font-size: var(--fs-body);
+  color: var(--c-text);
+  margin: 0 0 4px;
+}
+
+.brix-meta .meta-farming {
+  font-size: var(--fs-meta);
+  color: var(--c-text-subtle);
+}
+
+/* Wines */
+.brix-wines {
+  max-width: var(--brix-content-max);
+  margin: 0 0 40px;
+}
+
+.brix-wines p {
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+/* Copy */
+.brix-copy p {
+  max-width: var(--brix-content-max);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.brix-copy h3 {
+  max-width: var(--brix-content-max);
+  margin-top: 44px;
+  margin-bottom: 18px;
+  font-size: var(--fs-h2);
+  letter-spacing: 0.05em;
+}
+
+/* Producer Layout (NO STICKY IMAGE) */
+@media screen and (min-width: 768px) {
+  .blog-item-inner-wrapper {
+    max-width: var(--brix-page-max) !important;
+    margin: 0 auto !important;
+  }
+
+  .blog-item-content .sqs-col-12 {
+    display: grid !important;
+    grid-template-columns: minmax(320px, 1fr) minmax(280px, 520px) !important;
+    column-gap: clamp(40px, 5vw, 80px);
+    align-items: start;
+  }
+
+  .blog-item-content .sqs-col-12 > .sqs-block-code,
+  .blog-item-content .sqs-col-12 > .sqs-block-html {
+    grid-column: 1 !important;
+    min-width: 0;
+  }
+
+  .blog-item-content .sqs-col-12 > .sqs-block-image {
+    grid-column: 2 !important;
+    position: relative !important;
+    align-self: start;
+  }
+
+  .blog-item-content .sqs-block-image .intrinsic {
+    overflow: hidden;
+  }
+
+  .blog-item-content .sqs-block-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .brix-producers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blog-item-content .sqs-col-12 {
+    grid-template-columns: minmax(260px, 1fr) minmax(220px, 380px) !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .brix-sticky-feature {
+    display: block;
+    padding: 0 6vw;
+  }
+
+  .brix-producers {
+    display: block;
+    padding: 0 6vw;
+  }
+
+  .brix-col {
+    margin-bottom: 28px;
+  }
+
+  .blog-item-content .sqs-col-12 {
+    display: block !important;
+  }
+
+  .blog-item-content .sqs-block-image img {
+    height: auto !important;
+    object-fit: contain;
+  }
+}
+
+/* Print */
+@media print {
+  .blog-item-content .sqs-col-12 {
+    display: block !important;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Newsletter */
+.sqs-block-newsletter {
+  max-width: var(--brix-content-max);
+  margin: 0 auto;
+}
+
+.sqs-block-newsletter .newsletter-form-body {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid var(--c-text);
+  padding-bottom: 8px;
+}
+
+.sqs-block-newsletter .newsletter-form-field-element {
+  width: 100%;
+  border: 0 !important;
+  background: transparent !important;
+  padding: 8px 0 !important;
+}
+
+.sqs-block-newsletter .newsletter-form-button {
+  border: 0 !important;
+  background: transparent !important;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+}
+
+/* Utilities */
+.brix-producers .brix-col {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+.brix-sticky-heading {
+  padding-left: 80px;
+  padding-right: 60px;
+}
+.brix-sticky-copy {
+  padding-left: 20px;
+  padding-right: 80px;
+}
+/* =========================================================
+   BRIX SYSTEM UNIFICATION LAYER (INDEX ↔ PRODUCER ALIGNMENT)
+   Add BELOW your existing CSS. Do NOT replace core system.
+   ========================================================= */
+
+
+/* -------------------------
+   SAFE ADDITIONS (TOKENS)
+   ------------------------- */
+
+:root {
+  --color-faint: #bbb;
+  --color-bg-soft: #f7f6f4;
+}
+
+
+/* -------------------------
+   CORE ROW SYSTEM (NEW BASE)
+   This is the shared DNA for INDEX + PRODUCER PAGES
+   ------------------------- */
+
+.brix-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+
+/* -------------------------
+   INDEX (COMPRESSED ROW SYSTEM)
+   ------------------------- */
+
+.brix-directory {
+  display: flex;
+  flex-direction: column;
+}
+
+.brix-directory-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+}
+
+.brix-directory-row:hover {
+  background: var(--color-bg-soft);
+}
+
+.brix-directory-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.brix-directory-name {
+  font-size: var(--fs-body);
+  font-weight: 400;
+}
+
+.brix-directory-region {
+  font-size: var(--fs-small);
+  color: var(--c-text-muted);
+}
+
+.brix-directory-desc {
+  font-size: var(--fs-small);
+  color: var(--c-text-quiet);
+  max-width: 420px;
+  text-align: right;
+}
+
+
+/* -------------------------
+   PRODUCER PAGE (EXPANDED ROW SYSTEM)
+   ------------------------- */
+
+/* Metadata rows replace table logic */
+.brix-meta-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brix-meta-label {
+  font-size: var(--fs-meta);
+  color: var(--color-faint);
+}
+
+.brix-meta-value {
+  font-size: var(--fs-body);
+  color: var(--c-text);
+}
+
+
+/* Terroir row system (replaces mixed paragraph/table hybrid) */
+.brix-terroir {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brix-terroir-title {
+  font-size: var(--fs-small);
+  color: var(--color-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.brix-terroir-text {
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--c-text);
+}
+
+
+/* Wines as structured rows */
+.brix-wine-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brix-wine-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.brix-wine-name {
+  font-size: var(--fs-body);
+}
+
+.brix-wine-meta {
+  font-size: var(--fs-small);
+  color: var(--color-faint);
+}
+
+.brix-wine-tag {
+  font-size: var(--fs-small);
+  color: var(--c-text-quiet);
+}
+
+
+/* -------------------------
+   SHARED INTERACTION STATES
+   ------------------------- */
+
+.brix-row:hover,
+.brix-directory-row:hover,
+.brix-meta-row:hover,
+.brix-wine-row:hover {
+  background: var(--color-bg-soft);
+}
+
+
+/* -------------------------
+   OPTIONAL: VISUAL ALIGNMENT RULE
+   (ensures index + producer pages feel same system)
+   ------------------------- */
+
+.brix-section {
+  margin-bottom: var(--space-5);
+}
+
+.brix-section-title {
+  font-size: var(--fs-h3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-faint);
+  margin-bottom: var(--space-2);
+}
