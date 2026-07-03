@@ -272,3 +272,18 @@ html, body {
     padding: 30px 20px;
   }
 }
+/* =========================
+   PRODUCER PAGE OVERRIDE MODE
+   ========================= */
+
+.brix-producer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  text-align: left;
+}
+
+/* STOP GRID BEHAVIOUR BLEEDING INTO PAGES */
+.brix-producer .brix-col {
+  display: block;
+}
