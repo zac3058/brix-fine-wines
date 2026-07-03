@@ -9,31 +9,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/brix.css">
+  <!-- FIXED: GitHub Pages relative path -->
+  <link rel="stylesheet" href="../assets/css/brix.css">
 </head>
 
 <body>
 
 <nav>
   <div class="nav-left">
-    <a href="/index.html">Home</a>
-    <a href="/producers">Producers</a>
+    <!-- FIXED -->
+    <a href="../index.html">Home</a>
+
+    <!-- FIXED (no /producers route on GitHub Pages) -->
+    <a href="./index.html">Producers</a>
   </div>
+
   <span class="nav-logo">Brix Fine Wines</span>
+
   <div class="nav-right">
-    <a href="/contact">Contact</a>
+    <!-- FIXED -->
+    <a href="../contact.html">Contact</a>
   </div>
 </nav>
 
 <div class="container">
 
-  <a class="back-link" href="/producers">← All Producers</a>
+  <!-- FIXED -->
+  <a class="back-link" href="./index.html">← All Producers</a>
 
   <!-- HERO -->
   <div class="hero">
 
     <div class="producer-image-wrap">
-      <img src="/images/laura-david.jpg" alt="Laura David">
+      <!-- FIXED IMAGE PATH -->
+      <img src="../assets/images/laura-david.jpg" alt="Laura David">
     </div>
 
     <div class="info-panel">
@@ -96,7 +105,7 @@
 
   </div>
 
-  <!-- WINES (FULL LIST RESTORED) -->
+  <!-- WINES -->
   <div class="brix-wines">
 
     <div class="brix-section-title">Current Wines</div>
