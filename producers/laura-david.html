@@ -6,106 +6,136 @@
   <meta name="description" content="Laura David — Loire Valley producer profile. Brix Fine Wines." />
   <title>Laura David — Brix Fine Wines</title>
 
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:title" content="Laura David — Brix Fine Wines" />
+  <meta property="og:description" content="Organic Chenin Blanc from the Montlouis-sur-Loire appellation. Founded in 2017, the domaine spans 9 hectares." />
+  <meta property="og:image" content="/brix-fine-wines/images/laura-david.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/brix-fine-wines/producers/laura-david.html" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="/brix-fine-wines/producers/laura-david.html" />
+
   <link rel="stylesheet" href="/brix-fine-wines/assets/css/brix.css">
 </head>
 
 <body>
 
 <div class="brix-producer">
-
-  <div class="producer-page">
+  <main class="producer-page">
 
     <a class="back-link" href="/brix-fine-wines/producers/index.html">
-      ← All Producers
+      ← Back to All Producers
     </a>
 
     <!-- HERO -->
     <div class="hero">
 
       <div class="producer-image-wrap">
-        <img src="/brix-fine-wines/images/laura-david.jpg" alt="Laura David">
+        <img src="/brix-fine-wines/images/laura-david.jpg" alt="Laura David" width="600" height="400">
       </div>
 
       <div class="info-panel">
 
         <h1>Laura David</h1>
 
-       <p class="signature-note">
-  Organic Chenin Blanc from the Montlouis-sur-Loire appellation
-</p>
+        <p class="signature-note">
+          Organic Chenin Blanc from the Montlouis-sur-Loire appellation
+        </p>
+
         <!-- META -->
         <div class="brix-meta">
-
-          <div class="brix-meta-row">
-            <div class="brix-meta-label">Country</div>
-            <div class="brix-meta-value">France</div>
-          </div>
-
-          <div class="brix-meta-row">
-            <div class="brix-meta-label">Region</div>
-            <div class="brix-meta-value">Loire Valley</div>
-          </div>
-
-          <div class="brix-meta-row">
-            <div class="brix-meta-label">Sub-Region</div>
-            <div class="brix-meta-value">Montlouis-sur-Loire</div>
-          </div>
-
-          <div class="brix-meta-row">
-            <div class="brix-meta-label">Farming</div>
-            <div class="brix-meta-value">Organic Certified</div>
-          </div>
-
+          <dl>
+            <div class="brix-meta-row">
+              <dt class="brix-meta-label">Country</dt>
+              <dd class="brix-meta-value">France</dd>
+            </div>
+            <div class="brix-meta-row">
+              <dt class="brix-meta-label">Region</dt>
+              <dd class="brix-meta-value">Loire Valley</dd>
+            </div>
+            <div class="brix-meta-row">
+              <dt class="brix-meta-label">Sub-Region</dt>
+              <dd class="brix-meta-value">Montlouis-sur-Loire</dd>
+            </div>
+            <div class="brix-meta-row">
+              <dt class="brix-meta-label">Farming</dt>
+              <dd class="brix-meta-value">Organic Certified</dd>
+            </div>
+          </dl>
         </div>
 
         <!-- TERROIR -->
-        <div class="brix-terroir">
-          <div class="brix-terroir-title">Terroir</div>
+        <section class="brix-terroir">
+          <h2 class="brix-terroir-title">Terroir</h2>
           <div class="brix-terroir-text">
             Tuffeau limestone with flinty sand (silex) and clay over alluvial soils on the south bank of the Loire.
           </div>
-        </div>
+        </section>
 
       </div>
     </div>
 
     <!-- BIO -->
-    <div class="brix-copy">
-
-      <p>
-        Founded in 2017, the domaine spans 9 hectares in Montlouis-sur-Loire.
-      </p>
-
-      <p>
-        Organic farming and gentle vinification in a troglodyte cellar with minimal intervention.
-      </p>
-
-    </div>
+    <section class="brix-copy">
+      <p>Founded in 2017, the domaine spans 9 hectares in Montlouis-sur-Loire.</p>
+      <p>Organic farming and gentle vinification in a troglodyte cellar with minimal intervention.</p>
+    </section>
 
     <!-- WINES -->
-    <div class="brix-wines">
+    <section class="brix-wines">
+      <h2 class="brix-section-title">Current Wines</h2>
 
-      <div class="brix-section-title">Current Wines</div>
+      <ul class="brix-wine-list">
+        <li class="brix-wine-row">
+          <span class="brix-wine-name">2023 Montlouis-sur-Loire Méthode Traditionnelle Chenin Blanc</span>
+          <span class="brix-wine-tag">Pétillant</span>
+        </li>
+        <li class="brix-wine-row">
+          <span class="brix-wine-name">2023 Montlouis-sur-Loire 'L'Insolente' Chenin Blanc</span>
+          <span class="brix-wine-tag">Sec</span>
+        </li>
+        <li class="brix-wine-row">
+          <span class="brix-wine-name">2023 'Les Audouines' Chardonnay</span>
+          <span class="brix-wine-tag">Blanc</span>
+        </li>
+        <li class="brix-wine-row">
+          <span class="brix-wine-name">2018 Montlouis-sur-Loire 'Moelleux' Doux Chenin Blanc</span>
+          <span class="brix-wine-tag">Moelleux</span>
+        </li>
+        <li class="brix-wine-row">
+          <span class="brix-wine-name">2022 Pinot Noir</span>
+          <span class="brix-wine-tag">Rouge</span>
+        </li>
+      </ul>
+    </section>
 
-      <div class="brix-wine-row">
-        <div class="brix-wine-name">2023 Montlouis-sur-Loire Méthode Traditionnelle</div>
-        <div class="brix-wine-tag">Pétillant</div>
-      </div>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Winery",
+      "name": "Laura David",
+      "description": "Organic Chenin Blanc from the Montlouis-sur-Loire appellation. Founded in 2017, the domaine spans 9 hectares.",
+      "address": {
+        "@type": "Place",
+        "addressRegion": "Loire Valley",
+        "addressSubregion": "Montlouis-sur-Loire",
+        "addressCountry": "FR"
+      },
+      "foundingDate": "2017",
+      "image": "/brix-fine-wines/images/laura-david.jpg",
+      "makesOffer": [
+        {"@type": "Offer", "name": "2023 Montlouis-sur-Loire Méthode Traditionnelle Chenin Blanc", "category": "Pétillant"},
+        {"@type": "Offer", "name": "2023 Montlouis-sur-Loire 'L'Insolente' Chenin Blanc", "category": "Sec"},
+        {"@type": "Offer", "name": "2023 'Les Audouines' Chardonnay", "category": "Blanc"},
+        {"@type": "Offer", "name": "2018 Montlouis-sur-Loire 'Moelleux' Doux Chenin Blanc", "category": "Moelleux"},
+        {"@type": "Offer", "name": "2022 Pinot Noir", "category": "Rouge"}
+      ]
+    }
+    </script>
 
-      <div class="brix-wine-row">
-        <div class="brix-wine-name">2023 L’Insolente Chenin Blanc</div>
-        <div class="brix-wine-tag">Sec</div>
-      </div>
-
-      <div class="brix-wine-row">
-        <div class="brix-wine-name">2022 Pinot Noir</div>
-        <div class="brix-wine-tag">Rouge</div>
-      </div>
-
-    </div>
-
-  </div>
-
+  </main>
 </div>
 
 </body>
