@@ -97,6 +97,10 @@ a:focus-visible {
   flex-direction: column;
 }
 
+.brix-country-heading {
+  margin-top: var(--space-8);
+}
+
 .brix-producers p,
 .brix-producers a {
   white-space: nowrap;
