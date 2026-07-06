@@ -124,19 +124,6 @@ a:focus-visible {
   position: relative; /* keep overlay here */
 }
 
-/* visual column guides */
-.brix-producers::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px);
-
-  background-size: 25% 100%;
-}
-
 .brix-col {
   display: flex;
   flex-direction: column;
