@@ -62,6 +62,35 @@ body {
 *::after {
   box-sizing: border-box;
 }
+.brix-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6) 3vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.brix-header a {
+  text-decoration: none;
+  color: var(--c-text);
+}
+
+.brix-header nav {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.brix-header nav a {
+  font-size: var(--fs-meta);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brix-header nav a:hover {
+  color: var(--c-text-secondary);
+}
+
 
 /* =========================
    ACCESSIBILITY
