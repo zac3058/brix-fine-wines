@@ -108,9 +108,6 @@ a:focus-visible {
    Scales automatically as producers are added: grid rows
    flow naturally, row-gap keeps spacing consistent at any count.
    ========================================================= */
-/* =========================================================
-   INDEX PAGE — PRODUCERS GRID
-   ========================================================= */
 
 .brix-producers {
   display: grid;
