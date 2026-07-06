@@ -64,10 +64,10 @@ html, body {
   column-gap: 1.6rem;
   width: 100%;
   justify-content: center;
-  margin: 0 auto;
-  padding: 40px 3vw;
-}
 
+  /* UPDATED SPACING */
+  padding: 120px 3vw 40px; /* top, sides, bottom */
+}
 .brix-col {
   display: flex;
   flex-direction: column;
