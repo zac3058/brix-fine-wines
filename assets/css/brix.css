@@ -193,9 +193,9 @@ a:focus-visible {
 }
 
 .brix-hero-image img {
-  width: 100%;
-  height: auto;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .brix-info-panel h1 {
