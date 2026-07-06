@@ -146,6 +146,11 @@ a:focus-visible {
   color: var(--c-text-secondary);
 }
 
+.brix-spacer {
+  visibility: hidden;
+  height: var(--space-8); /* adjust this value to taste */
+}
+
 /* =========================================================
    PRODUCER PAGE — CORE WRAPPER
    ========================================================= */
