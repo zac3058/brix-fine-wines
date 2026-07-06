@@ -79,7 +79,21 @@ a:focus-visible {
    Scales automatically as producers are added: grid rows
    flow naturally, row-gap keeps spacing consistent at any count.
    ========================================================= */
+.brix-producers {
+  position: relative;
+}
 
+/* visual column guides */
+.brix-producers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: calc(25%) 100%;
+}
 .brix-producers {
   display: grid;
   grid-template-columns: repeat(4, minmax(170px, max-content));
