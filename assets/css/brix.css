@@ -1,7 +1,6 @@
-
 /* =========================================================
-   BRIX FINE WINES — FINAL FIXED SYSTEM
-   index (producers list) + producer pages separated cleanly
+   BRIX FINE WINES — DESIGN SYSTEM v2 (UPGRADED)
+   cleaner semantics, scalable components, same visual output
    ========================================================= */
 
 /* =========================
@@ -9,6 +8,7 @@
    ========================= */
 
 :root {
+  /* spacing scale */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -21,6 +21,7 @@
   --space-16: 64px;
   --space-20: 80px;
 
+  /* typography */
   --fs-display: clamp(42px, 5vw, 72px);
   --fs-h2: 18px;
   --fs-h3: 14px;
@@ -28,24 +29,23 @@
   --fs-meta: 13px;
   --fs-small: 12px;
 
+  /* semantic colour system (simplified) */
   --c-text: #1a1a1a;
-  --c-text-muted: #666;
-  --c-text-faint: #999;
-  --c-text-quiet: #777;
-  --c-text-subtle: #888;
+  --c-text-secondary: #666;
+  --c-text-tertiary: #888;
+  --c-text-disabled: #b3b3b3;
 
   --c-border: #e0e0e0;
   --c-bg-soft: #f7f6f4;
 }
 
 /* =========================
-   GLOBAL RESET (FIXES CENTERING)
+   GLOBAL RESET
    ========================= */
 
 html, body {
   margin: 0;
   padding: 0;
-  text-align: left;
   color: var(--c-text);
   font-family: system-ui, -apple-system, sans-serif;
 }
@@ -55,13 +55,12 @@ html, body {
 }
 
 /* =========================================================
-   INDEX PAGE (PRODUCERS GRID)
-   ONLY applies to .brix-producers
+   INDEX PAGE — PRODUCERS GRID
    ========================================================= */
 
 .brix-producers {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(4, minmax(160px, max-content));
   column-gap: 1.6rem;
   width: 100%;
   justify-content: center;
@@ -69,13 +68,11 @@ html, body {
   padding: 40px 3vw;
 }
 
-/* columns */
 .brix-col {
   display: flex;
   flex-direction: column;
 }
 
-/* text */
 .brix-producers p,
 .brix-producers a {
   white-space: nowrap;
@@ -99,7 +96,7 @@ html, body {
   font-size: var(--fs-h3);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--c-text-quiet);
+  color: var(--c-text-tertiary);
 }
 
 .brix-producers strong {
@@ -111,11 +108,11 @@ html, body {
   margin-left: 4px;
   font-size: var(--fs-small);
   font-style: italic;
-  color: var(--c-text-subtle);
+  color: var(--c-text-secondary);
 }
 
 /* =========================================================
-   PRODUCER PAGE (NO INDEX INHERITANCE)
+   PRODUCER PAGE — CORE WRAPPER
    ========================================================= */
 
 .brix-producer {
@@ -125,13 +122,11 @@ html, body {
   text-align: left;
 }
 
-/* kill any inheritance from index system */
-.brix-producer * {
-  text-align: left;
-}
+/* =========================================================
+   HERO
+   ========================================================= */
 
-/* HERO */
-.hero {
+.brix-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -139,19 +134,19 @@ html, body {
   margin-bottom: 40px;
 }
 
-.producer-image-wrap img {
+.brix-hero-image img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.info-panel h1 {
+.brix-info-panel h1 {
   font-size: var(--fs-display);
   margin: 0 0 12px;
 }
 
 /* =========================================================
-   META SYSTEM
+   META BLOCK
    ========================================================= */
 
 .brix-meta {
@@ -163,11 +158,12 @@ html, body {
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 1px solid var(--c-border);
+  transition: background 0.15s ease;
 }
 
 .brix-meta-label {
   font-size: var(--fs-meta);
-  color: var(--c-text-faint);
+  color: var(--c-text-tertiary);
 }
 
 .brix-meta-value {
@@ -188,7 +184,7 @@ html, body {
   font-size: var(--fs-small);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--c-text-faint);
+  color: var(--c-text-secondary);
   margin-bottom: 6px;
 }
 
@@ -198,7 +194,7 @@ html, body {
 }
 
 /* =========================================================
-   COPY
+   COPY BLOCK
    ========================================================= */
 
 .brix-copy p {
@@ -219,7 +215,7 @@ html, body {
   font-size: var(--fs-h3);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--c-text-faint);
+  color: var(--c-text-secondary);
   margin-bottom: 12px;
 }
 
@@ -229,6 +225,7 @@ html, body {
   align-items: baseline;
   padding: 10px 0;
   border-bottom: 1px solid var(--c-border);
+  transition: background 0.15s ease;
 }
 
 .brix-wine-name {
@@ -237,7 +234,7 @@ html, body {
 
 .brix-wine-tag {
   font-size: var(--fs-small);
-  color: var(--c-text-quiet);
+  color: var(--c-text-secondary);
 }
 
 /* hover states */
@@ -247,19 +244,20 @@ html, body {
 }
 
 /* =========================================================
-   MOBILE
+   RESPONSIVE
    ========================================================= */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  .brix-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
 
+@media screen and (max-width: 768px) {
   .brix-producers {
     display: block;
     padding: 20px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 30px;
   }
 
   .brix-producer {
