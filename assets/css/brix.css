@@ -79,8 +79,22 @@ a:focus-visible {
    Scales automatically as producers are added: grid rows
    flow naturally, row-gap keeps spacing consistent at any count.
    ========================================================= */
+/* =========================================================
+   INDEX PAGE — PRODUCERS GRID
+   ========================================================= */
+
 .brix-producers {
-  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(170px, max-content));
+  column-gap: 2rem;
+  row-gap: var(--space-8);
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: var(--space-page-top) 3vw var(--space-10);
+
+  position: relative; /* keep overlay here */
 }
 
 /* visual column guides */
@@ -92,18 +106,8 @@ a:focus-visible {
 
   background-image:
     linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px);
-  background-size: calc(25%) 100%;
-}
-.brix-producers {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(170px, max-content));
-  column-gap: 2rem;
-  row-gap: var(--space-8);
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  justify-content: center;
-  padding: var(--space-page-top) 3vw var(--space-10);
+
+  background-size: 25% 100%;
 }
 
 .brix-col {
