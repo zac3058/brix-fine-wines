@@ -119,11 +119,15 @@ a:focus-visible {
 }
 
 .brix-producers h3 {
-  margin: var(--space-3) 0 6px;
+  margin: var(--space-3) 0 var(--space-2);
   font-size: var(--fs-h3);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--c-text-tertiary);
+}
+
+.brix-region-placeholder {
+  visibility: hidden;
 }
 
 .brix-producers strong {
